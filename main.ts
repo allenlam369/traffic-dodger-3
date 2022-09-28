@@ -1,5 +1,5 @@
 info.onCountdownEnd(function () {
-	
+    game.over(true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.Projectile, function (sprite, otherSprite) {
     otherSprite.destroy()
@@ -162,7 +162,7 @@ let mySprite = sprites.create(img`
 controller.moveSprite(mySprite, 0, 100)
 mySprite.setStayInScreen(true)
 scroller.scrollBackgroundWithSpeed(-50, 0)
-info.startCountdown(15)
+info.startCountdown(30)
 forever(function () {
     projectile2 = sprites.createProjectileFromSide(img`
         . . . . . . . . . . . . . . . . 
@@ -190,18 +190,18 @@ forever(function () {
     projectile = sprites.createProjectileFromSide(img`
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
-        . . . f f f f f . f f f f f . . 
-        . . f f 3 3 3 f f f 3 3 3 f f . 
-        . . f 3 3 3 3 3 f 3 3 3 3 3 f . 
-        . . f 3 3 3 3 3 3 3 1 1 3 3 f . 
-        . . f 3 3 3 3 3 3 3 1 1 3 3 f . 
-        . . f 3 3 3 3 3 3 3 3 3 3 3 f . 
-        . . f f 3 3 3 b b b 3 3 3 f f . 
-        . . . f f 3 b b b b b 3 f f . . 
-        . . . . f f b b b b b f f . . . 
-        . . . . . f f b b b f f . . . . 
-        . . . . . . f f b f f . . . . . 
-        . . . . . . . f f f . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . b b . . . . . . . 
+        . . . . . . b 5 5 b . . . . . . 
+        . . . b b b 5 5 1 1 b b b . . . 
+        . . . b 5 5 5 5 1 1 5 5 b . . . 
+        . . . . b d 5 5 5 5 d b . . . . 
+        . . . . c b 5 5 5 5 b c . . . . 
+        . . . . c 5 d d d d 5 c . . . . 
+        . . . . c 5 d c c d 5 c . . . . 
+        . . . . c c c . . c c c . . . . 
+        . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         . . . . . . . . . . . . . . . . 
         `, -90, 0)
